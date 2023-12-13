@@ -13,7 +13,7 @@ namespace ExchangeRate.Entities
         {
                List<Partners> partners = new List<Partners>() 
                {
-                   new Partners { Country = "Mexico",CountryCode="MXN" ,CurrencyCode = "MEX", FlatRate =  0.024m },
+                   new Partners { Country = "Mexico",CountryCode="MEX" ,CurrencyCode = "MXN", FlatRate =  0.024m },
                    new Partners { Country = "India",CountryCode="IND" ,CurrencyCode = "INR", FlatRate = 3.213m },
                    new Partners { Country = "Philippines",CountryCode="PHL" ,CurrencyCode = "PHP", FlatRate = 2.437m },
                    new Partners { Country = "Guatemala",CountryCode="GTM" ,CurrencyCode = "GTQ", FlatRate =  0.056m }
@@ -37,10 +37,15 @@ namespace ExchangeRate.Entities
 
     public class PartnerRatesResponse
     {
+        [JsonProperty("CurrencyCode")]
         public string? CurrencyCode { get; set; }
+        [JsonProperty("CountryCode")]
         public string? CountryCode { get; set; }
+        [JsonProperty("PangeaRate")]
         public decimal PangeaRate { get; set; }
+        [JsonProperty("PaymentMethod")]
         public string? PaymentMethod { get; set; }
+        [JsonProperty("DeliveryMethod")]
         public string? DeliveryMethod { get; set; }
     }
     internal class JsonFile
